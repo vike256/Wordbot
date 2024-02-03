@@ -18,7 +18,7 @@ letter_points = {  # Create a dictionary to store the points for each letter
 }
 
 # Checks if a word can be constructed with the given letters and returns the amount of points if it can
-def word_can_be_constucted(letters, word):
+def word_can_be_constructed(letters, word):
     points = 0
     blanks = letters.count('_')
     missing_letters = 0
@@ -41,7 +41,7 @@ def get_words_for_chars(letters):
     list = {}
 
     for word in wordlist:
-        points = word_can_be_constucted(letters, word)
+        points = word_can_be_constructed(letters, word)
         if points != None:
             list[word] = points
             
@@ -57,7 +57,7 @@ def get_words_with_pattern(letters, pattern):
 
     for word in wordlist:
         if pattern in word and word != pattern:
-            points = word_can_be_constucted(available_letters, word)
+            points = word_can_be_constructed(available_letters, word)
             if points != None:
                 list[word] = points
             
