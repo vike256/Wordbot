@@ -1,5 +1,4 @@
 import argparse
-import os
 
 
 with open('wordlist.txt', 'r') as file:
