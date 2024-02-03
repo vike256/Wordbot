@@ -71,6 +71,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-letters', required=True)
     parser.add_argument('-words', nargs='+', required=False)
+    parser.add_argument('-start', required=False)
+    parser.add_argument('-end', required=False)
     args = parser.parse_args()
 
     my_letters = args.letters
@@ -78,6 +80,8 @@ def main():
     my_letters = [char for char in my_letters]  # Make a list containing each letter
 
     ready_words = args.words
+    starts_with = args.start
+    ends_with = args.end
 
     possible_words = {}  # Dictionary to store all possible words and their points
 
@@ -91,6 +95,17 @@ def main():
                 possible_words.update(get_words_for_chars(my_letters_plus))
             
             possible_words.update(get_words_with_pattern(my_letters, word))
+
+    words_to_remove = []
+
+    for word in possible_words:
+        if starts_with != None and not word.startswith(starts_with):
+            words_to_remove.append(word)
+        if ends_with != None and not word.endswith(ends_with):
+            words_to_remove.append(word)
+
+    for word in words_to_remove:
+        possible_words.pop(word, None)
 
     possible_words = sorted(possible_words.items(), key=lambda x: x[1], reverse=True)  # Sort the words based on points given
 
