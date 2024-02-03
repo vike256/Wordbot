@@ -33,10 +33,7 @@ def word_can_be_constucted(letters, word):
             if missing_letters > blanks:
                 break
 
-    if missing_letters > blanks:
-        points = 0
-
-    return points
+    return points if blanks >= missing_letters else None
 
 
 # Goes through every word in the wordlist and returns the list of possible words and their respective points
@@ -45,7 +42,7 @@ def get_words_for_chars(letters):
 
     for word in wordlist:
         points = word_can_be_constucted(letters, word)
-        if points:
+        if points != None:
             list[word] = points
             
     return list
@@ -61,7 +58,7 @@ def get_words_with_pattern(letters, pattern):
     for word in wordlist:
         if pattern in word and word != pattern:
             points = word_can_be_constucted(available_letters, word)
-            if points:
+            if points != None:
                 list[word] = points
             
     return list
