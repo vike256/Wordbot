@@ -104,7 +104,7 @@ def main():
     for word in words_to_remove:
         possible_words.pop(word, None)
 
-    possible_words = sorted(possible_words.items(), key=lambda x: x[1], reverse=True)  # Sort the words based on points given
+    possible_words = sorted(possible_words.items(), key=lambda x: x[1], reverse=False)  # Sort the words based on points given
 
     for word, points in possible_words[:100]:  # Only list the top 100 words
         print(f'{word}: {points}')
