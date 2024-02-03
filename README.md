@@ -10,4 +10,6 @@ Arguments (* means required, description, example):
 - `-start`, Specify that the word has to start with this pattern, `-start do`  
 - `-end`, Specify that the word has to end with this pattern, `-end es`  
 
+Example: `python main.py -letters gorilla -words sky`
+
 Wordlist: https://github.com/wordnik/wordlist/blob/main/LICENSE  
