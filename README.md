@@ -4,7 +4,7 @@ Letter League assistant.
 Made for fun.  
 
 
-Argument  | Required | Descripion                      | Example
+Argument  | Required | Description                      | Example
 ----------|----------|---------------------------------|--------
 `-letters`| Yes      | Your letters                    | `-letters abcdef_` ("_" refers to the blank letter which does not give points but can be set to any letter)  
 `-words`  | No       | List of words already on the board | `-words hey welcome`  
