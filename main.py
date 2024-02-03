@@ -106,7 +106,7 @@ def main():
 
     possible_words = sorted(possible_words.items(), key=lambda x: x[1], reverse=False)  # Sort the words based on points given
 
-    for word, points in possible_words[:100]:  # Only list the top 100 words
+    for word, points in possible_words[-100:]:  # Only list the top 100 words
         print(f'{word}: {points}')
     
 
