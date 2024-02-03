@@ -35,7 +35,7 @@ def word_can_be_constucted(letters, word):
 
     if missing_letters > blanks:
         points = 0
-        
+
     return points
 
 
@@ -92,9 +92,9 @@ def main():
             
             possible_words.update(get_words_with_pattern(my_letters, word))
 
-    possible_words = sorted(possible_words.items(), key=lambda x: x[1], reverse=True)
+    possible_words = sorted(possible_words.items(), key=lambda x: x[1], reverse=True)  # Sort the words based on points given
 
-    for word, points in possible_words[:100]:
+    for word, points in possible_words[:100]:  # Only list the top 100 words
         print(f'{word}: {points}')
     
 
