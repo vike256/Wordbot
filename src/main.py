@@ -1,7 +1,7 @@
 import argparse
 
 
-with open('../wordlist.txt', 'r') as file:
+with open('wordlist.txt', 'r') as file:
     wordlist = file.read()
     wordlist = wordlist.split()
 
